@@ -110,7 +110,7 @@ The Docker container uses volume mounts to read files from your local directorie
 ```
 Local Directory                Container Directory
 ----------------               -------------------
-./app/agent/convo       →      /app/app/agent/convo
+./agent/convo       →      /app/app/agent/convo
 ./public                →      /app/public
 ```
 
@@ -120,7 +120,7 @@ When you edit files locally, the running container sees the changes immediately 
 
 ```
 4sight-app-live-starter/
-├── app/
+├── /
 │   └── agent/
 │       └── convo/
 │           ├── page.tsx           # Main conversation page
@@ -165,7 +165,7 @@ npm run docker:start
 If port 3000 is already in use, modify the `docker:start` script in `package.json`:
 
 ```json
-"docker:start": "docker run -d --name foresight-app -p 3001:3000 -v $(pwd)/app/agent/convo:/app/app/agent/convo -v $(pwd)/public:/app/public nematix/foresight-app-live:latest"
+"docker:start": "docker run -d --name foresight-app -p 3001:3000 -v $(pwd)/agent/convo:/app/app/agent/convo -v $(pwd)/public:/app/public nematix/foresight-app-live:latest"
 ```
 
 ### Changes Not Reflecting
