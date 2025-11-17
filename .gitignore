@@ -1,0 +1,20 @@
+# Environment variables
+.env.local
+.env
+
+# Node modules (if using npm install for any reason)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*

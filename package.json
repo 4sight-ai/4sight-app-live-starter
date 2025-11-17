@@ -1,0 +1,27 @@
+{
+  "name": "4sight-app-live-starter",
+  "version": "1.0.0",
+  "description": "Starter project for running Foresight App Live with Docker",
+  "scripts": {
+    "docker:pull": "docker pull nematix/foresight-app-live:latest",
+    "docker:start": "docker run -d --name foresight-app -p 3000:3000 -v $(pwd)/agent/convo:/app/app/agent/convo -v $(pwd)/public:/app/public nematix/foresight-app-live:latest",
+    "docker:stop": "docker stop foresight-app",
+    "docker:remove": "docker rm foresight-app",
+    "docker:restart": "docker restart foresight-app",
+    "docker:logs": "docker logs foresight-app",
+    "docker:logs:follow": "docker logs -f foresight-app",
+    "docker:reset": "npm run docker:stop && npm run docker:remove && npm run docker:start",
+    "start": "npm run docker:pull && npm run docker:start",
+    "stop": "npm run docker:stop",
+    "restart": "npm run docker:restart",
+    "logs": "npm run docker:logs:follow"
+  },
+  "keywords": [
+    "foresight",
+    "docker",
+    "nextjs",
+    "livekit"
+  ],
+  "author": "Nematix",
+  "license": "MIT"
+}
