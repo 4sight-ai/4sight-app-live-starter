@@ -40,7 +40,7 @@ npm install
 ### 4. Start the Application
 
 ```bash
-npm start
+./start.sh
 ```
 
 This will:
